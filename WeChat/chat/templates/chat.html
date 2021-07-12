@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  WeChat
+{% endblock %}
+
+{% block navbar %}
+  {% include 'inc/_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+  <script type="text/javascript">
+    window.setTimeout('window.location.reload()', 3000);
+  </script>
+  <div class="container">
+    <div class="mt-2" style="height: 600px; overflow-x: auto;">
+      {% for item in items %}
+        <div class="container bg-dark text-white" style="border-radius: 15px; padding: 10px; margin: 10px 0;">
+          <div class="fs-5">Noname</div>
+          <span class="time-right" style="float: right;">{{item.data}}</span>
+          <p style="margin-left: 10px;">{{item.text}}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <form action="{% url 'chat' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.non_field.errors }}
+    <div class="mt-1">
+      {{form.as_p}}
+      <button type='submit' class='btn btn-primary btn-block mb-2'>Отправить</button>
+    </div>
+    </form>
+  </div>
+  
+{% endblock %}

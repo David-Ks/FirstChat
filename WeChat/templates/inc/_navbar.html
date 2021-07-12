@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 4px;">
+	<div class="container-fluid justify-content-start">
+		<a class="navbar-brand" href="#">
+			<img src="https://www.citypng.com/public/uploads/preview/-11600558714e3lynonybu.png" alt="" width="36" height="27" class="d-inline-block align-text-top">
+			WeChat
+		</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a href="{% url 'chat' %}"><button class="btn btn-outline-danger text-danger me-2" type="button">Home</button></a>
+				</li>
+				<li class="nav-item">
+					<a href="{% url 'msender' %}"><button class="btn btn-outline-info text-info me-2" type="button">M-Sender</button></a>
+				</li>
+				<li class="nav-item">
+					<a href="#"><button class="btn btn-outline-warning text-warning me-2" type="button">Contacts</button></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
